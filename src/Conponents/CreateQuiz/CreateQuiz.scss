@@ -1,0 +1,188 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+.CreateQuiz{
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 0;
+    @include flex(flex-start,center,column);
+    background-image: url("../img/background.avif");
+    background-size: cover;
+    .CreateQuiz__send{
+        padding: 10px 15px;
+        background-color: rgb(66, 172, 66);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        font-size: 32px;
+        cursor: pointer;
+    }
+    .CreateQuiz__inp{
+        width: 60%;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 26px;
+        border: 1px solid black;
+        padding: 0 5px;
+        background-color: transparent;
+        margin: 10px 0;
+        
+    }
+    .CreateQuiz__main{
+        width: 60%;
+        min-height: 10vh;
+        border-radius: 10px;
+        @include flex(space-between,center,column);
+        background-color: rgba(200, 200, 200, 0.2);
+        padding: 20px 50px;
+        .CreateQuiz__main__text{
+            font-size: 24px;
+            margin: 20px 0;
+
+        }
+        .CreateQuiz__main__questions{
+            width: 100%;
+            min-height: 200px;
+            @include flex(space-between,center,column);
+            border-bottom: 1px solid rgba(20,20,20,0.2);
+            padding-bottom: 10px;
+            .CreateQuiz__main__questions__btn{
+                padding: 10px 20px;
+                font-size: 28px;
+                background: rgba(20,20,20,0.2);
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        }
+        .CreateQuiz__testName{
+            width: 100%;
+            font-size: 24px;
+            margin: 20px 0;
+            border-bottom: 1px solid rgba(20,20,20,0.2);
+            @include flex(space-between,flex-start,column);
+        }
+        .CreateQuiz__main__topic{
+            font-size: 36px;
+            font-family: 'Geologica', sans-serif;
+            text-align: center;
+        }
+
+    }
+
+}
+.CreateQuizQuestion{
+    width: 100%;
+    min-height: 200px;
+    @include flex(space-between, center,column);
+    border: 1px solid rgba(20,20,20,0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    .CreateQuizQuestion__del{
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+    }
+    .CreateQuizQuestion__top{
+        width: 100%;
+        @include flex(space-between,center,row);
+        .CreateQuizQuestion__count{
+            font-size: 24px;  
+            display: flex;  
+            .CreateQuizQuestion__count__text{
+                margin-right: 5px;
+            }  
+        }
+        .CreateQuizQuestion__inp{
+       width: clamp(200px,80%,400px);
+            height: 30px;
+            font-size: 24px;
+            border-radius: 5px;
+    
+            border: 1px solid black;
+            padding: 0 5px;
+            background-color: transparent;
+            margin: 0 5px;
+        }
+    }
+
+    .CreateQuizQuestion__ans{
+        width: 100%;
+        min-height: 0px;
+        @include flex(center,center,row);
+        flex-wrap: wrap;
+        margin: 20px 0;
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: rgba(220, 220, 220, 1);
+            opacity: 1; /* Firefox */
+          }
+          .CreateQuizQuestion__ans__btnBox{
+            width: 45%;
+            width: 45%;
+            height: 100px;
+            @include flex(center,center,row);
+            width: clamp(200px, 100%, 300px);
+            margin: 10px 20px;
+            .CreateQuizQuestion__ans__btn{
+                padding: 10px 20px;
+                font-size: 28px;
+                background: rgba(20,20,20,0.2);
+                border-radius: 10px;
+                cursor: pointer;
+       
+          
+    
+              }
+          }
+
+        .CreateQuizQuestion__ans__box{
+            width: clamp(200px, 100%, 300px);
+            // min-width: 100px;
+            height: 100px;
+            background-color: red;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px 20px;
+
+            @include flex(flex-end,flex-start,row);
+            .CreateQuizQuestion__ans__box__question{
+                resize: none;
+                outline: none;
+                background-color: transparent;
+                border: none;
+                color: white;
+                font-size: 20px;
+                width: 100%;
+               height: 100%;
+
+                @include flex(flex-start,center,row);
+    
+                
+            }
+            // .CreateQuizQuestion__del{}
+
+        }
+    }
+}
+@media screen and (max-width:950px){
+    .CreateQuiz .CreateQuiz__main{
+        width: 99%;
+    }
+}
+@media screen and (max-width:600px){
+    .CreateQuizQuestion .CreateQuizQuestion__top .CreateQuizQuestion__count .CreateQuizQuestion__count__text {
+        display: none;
+    }
+}
+@media screen and (max-width:450px){
+    .CreateQuiz .CreateQuiz__main {
+        padding: 10px 5px;
+    }
+    .CreateQuiz__testName__text{
+        text-align: center;
+    }
+    .CreateQuiz .CreateQuiz__inp{
+        width: 100%;
+    }
+
+}
