@@ -162,6 +162,25 @@
   align-items: flex-start;
   flex-direction: row;
 }
+.CreateQuizQuestion .CreateQuizQuestion__ans .CreateQuizQuestion__ans__box .CreateQuizQuestion__ans__box__btns {
+  width: 32px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 0;
+}
+.CreateQuizQuestion .CreateQuizQuestion__ans .CreateQuizQuestion__ans__box .CreateQuizQuestion__ans__box__btns .CreateQuizQuestion__isRight {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  border: none;
+}
 .CreateQuizQuestion .CreateQuizQuestion__ans .CreateQuizQuestion__ans__box .CreateQuizQuestion__ans__box__question {
   resize: none;
   outline: none;

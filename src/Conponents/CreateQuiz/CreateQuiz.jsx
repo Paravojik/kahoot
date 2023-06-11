@@ -6,7 +6,7 @@ function CreateQuiz(){
     let [inpValName,setInpValName]=useState('')
 
     let [arrOfQuestions,setArrOfQuestions]=useState([{id:'Question: '+ 1,num:0,question:'',answer:[]}])
-
+  
    function createTest(){
     alert('Wait for result')
     fetch('https://paravojik-kahoot-api.onrender.com/addQuest',{
@@ -29,7 +29,7 @@ function CreateQuiz(){
         }else{
             alert('Your test created and now you can make new')
             console.log(data,'addQuestion')
-            setArrOfQuestions([{id:'Question: '+ 1,num:0,question:'',answer:[{id:'Answer: '+1,num:0,ans:''}]}])
+            setArrOfQuestions([{id:'Question: '+ 1,num:0,question:'',answer:[{id:'Answer: '+1,num:0,ans:'',isRight:false}]}])
         }
        
     }).catch(error=>{
@@ -69,13 +69,20 @@ function CreateQuiz(){
         copy[num].answer=value
         setArrOfQuestions([...copy])
     }
-    function  deleteQuestion (number){
+   async function  deleteQuestion (number){
          let copy= arrOfQuestions.filter(item=>item.num!==number)
        for(let i=0;i<copy.length;i++){
         copy[i].id= 'Question: '+(i+1)
         copy[i].num= i
+        copy[i].question= copy[i].question+'1'
        }
-       setArrOfQuestions([...copy])
+     await  setArrOfQuestions([...copy])
+       for(let i=0;i<copy.length;i++){
+
+        copy[i].question=  copy[i].question.substring(0,copy[i].question.length-1)
+       }
+    await   setArrOfQuestions([...copy])
+
     }
     useEffect(function(){
         console.log('arr:',arrOfQuestions)
@@ -101,7 +108,7 @@ function CreateQuiz(){
                     curQuest++
        
                     return(
-                        <CreateQuizQuestion curQuest={curQuest}  deleteQuestion={deleteQuestion} changeAns={changeAns} changeQuestion={changeQuestion} value={item} key={item.id} />
+                        <CreateQuizQuestion  curQuest={curQuest}  deleteQuestion={deleteQuestion} changeAns={changeAns} changeQuestion={changeQuestion} value={item} key={item.id} />
                     )
                 })}
           

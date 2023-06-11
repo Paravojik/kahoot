@@ -3,18 +3,20 @@ import './CreateQuiz.css'
 import CreateQuizAnswer from './CreateQuizAnswer'
 import del from '../img/delete-icon.png'
 function CreateQuizQuestion(props){
-    let [arrOfAnswers,setArrOfAnswers]=useState([{id:'Answer: '+1,num:0,ans:''}])
+    let [arrOfAnswers,setArrOfAnswers]=useState([{id:'Answer: '+1,num:0,ans:'',isRight:false}])
     let [inpValue,setInpValue]=useState(props.value.question)
+    let [delit,setDelit]=useState(0)
     function addAnswer(){
-        setArrOfAnswers([...arrOfAnswers,{id:'Answer: '+(arrOfAnswers.length+1),num:arrOfAnswers.length,ans:''}])
+        setArrOfAnswers([...arrOfAnswers,{id:'Answer: '+(arrOfAnswers.length+1),num:arrOfAnswers.length,ans:'',isRight:false}])
     }
 
     useEffect(function(){
+        console.log(delit)
         setInpValue(props.value.question)
 
         setArrOfAnswers([...props.value.answer])
          // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[props.value.question])
+    },[props.value.question,delit])
     function changeAns(num,value){
         let copy=[...arrOfAnswers]
         copy[num].ans=value
@@ -32,6 +34,8 @@ function CreateQuizQuestion(props){
     }
     function deleteQuest(){
         props.deleteQuestion(props.value.num)
+        setDelit(delit++)
+        console.log(delit)
  
    
     }
@@ -41,6 +45,11 @@ function CreateQuizQuestion(props){
          copy[i].id= 'Question: '+(i+1)
          copy[i].num= i
         }
+        setArrOfAnswers([...copy])
+    }
+    function isRightAns(num){
+        let copy=[...arrOfAnswers]
+        copy[num].isRight=!copy[num].isRight
         setArrOfAnswers([...copy])
     }
 
@@ -58,7 +67,7 @@ function CreateQuizQuestion(props){
             {arrOfAnswers.map(item=>{
        
                 return(
-                    <CreateQuizAnswer  deleteAnswer={deleteAnswer} changeAns={changeAns} value={item} key={item.id}/>
+                    <CreateQuizAnswer isRightAns={isRightAns}  deleteAnswer={deleteAnswer} changeAns={changeAns} value={item} key={item.id}/>
                 )
             })}
 
