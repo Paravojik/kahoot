@@ -5,7 +5,7 @@ import CreateQuizQuestion from './CreateQuizQuestion'
 function CreateQuiz(){
     let [inpValName,setInpValName]=useState('')
 
-    let [arrOfQuestions,setArrOfQuestions]=useState([{id:'Question: '+ 1,num:0,question:'',answer:[]}])
+    let [arrOfQuestions,setArrOfQuestions]=useState([{id:'Question: '+ 1,num:0,question:'',answer:[{id:'Answer: '+1,num:0,ans:'',isRight:false}]}])
   
    function createTest(){
     alert('Wait for result')
@@ -30,6 +30,7 @@ function CreateQuiz(){
             alert('Your test created and now you can make new')
             console.log(data,'addQuestion')
             setArrOfQuestions([{id:'Question: '+ 1,num:0,question:'',answer:[{id:'Answer: '+1,num:0,ans:'',isRight:false}]}])
+            setInpValName('')
         }
        
     }).catch(error=>{
@@ -54,7 +55,7 @@ function CreateQuiz(){
         // let copy=arrOfQuestions
         // copy.push({id:'Question: '+ (arrOfQuestions.length+1),question:''})
         // setArrOfQuestions([...copy])
-        setArrOfQuestions([...arrOfQuestions,{id:'Question: '+ (arrOfQuestions.length+1),num:arrOfQuestions.length,question:'',answer:[]}])
+        setArrOfQuestions([...arrOfQuestions,{id:'Question: '+ (arrOfQuestions.length+1),num:arrOfQuestions.length,question:'',answer:[{id:'Answer: '+1,num:0,ans:'',isRight:false}]}])
      
     }
     function changeQuestion(num,value){
