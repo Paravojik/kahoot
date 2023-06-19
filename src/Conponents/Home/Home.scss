@@ -1,0 +1,21 @@
+.Home{
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-image: url('../img/background.avif');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .Home__name{
+        font-size: 50px;
+        font-family: 'Kablammo', cursive;
+        color: white;
+    }
+    .Home__main{
+        z-index: 2;
+
+    }
+}
+
+/*# sourceMappingURL=Home.scss.map */

@@ -1,0 +1,13 @@
+.Header__btns__btn{
+    margin: 0 20px;
+    font-size: 20px;
+    background-color: rgb(133, 198, 36);
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+.Header__btns__btnCreate{
+    background-color: rgb(33, 111, 255);
+}

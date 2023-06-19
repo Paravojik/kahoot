@@ -1,0 +1,29 @@
+.Header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightblue;
+  padding: 0 20px;
+  box-shadow: 0 5px 20px rgba(20, 20, 20, 0.2);
+}
+.Header .Header__btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Header .Header__btns .Header__btns__btn {
+  margin: 0 20px;
+  font-size: 20px;
+  background-color: rgb(133, 198, 36);
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.Header .Header__btns .Header__btns__btnCreate {
+  background-color: rgb(33, 111, 255);
+}
+
+/*# sourceMappingURL=Header.css.map */

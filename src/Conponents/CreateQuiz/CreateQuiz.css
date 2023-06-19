@@ -1,6 +1,6 @@
 .CreateQuiz {
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   padding: 20px 0;
   display: flex;
   justify-content: flex-start;

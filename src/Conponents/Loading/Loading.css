@@ -1,0 +1,91 @@
+.Loading {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.Loading .Loading__box {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+}
+.Loading .Loading__box1 {
+  top: 0;
+  left: 0;
+  animation: 5s linear loading1;
+}
+.Loading .Loading__box2 {
+  top: 0;
+  right: 0;
+  animation: 5s linear loading2;
+}
+.Loading .Loading__box3 {
+  bottom: 0;
+  right: 0;
+  animation: 5s linear loading3;
+}
+.Loading .Loading__box4 {
+  bottom: 0;
+  left: 0;
+  animation: 5s linear loading4;
+}
+
+@keyframes loading1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  35% {
+    top: 0;
+    left: 50%;
+  }
+  100% {
+    top: 0;
+    left: 50%;
+  }
+}
+@keyframes loading2 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+  35% {
+    top: 50%;
+    right: 0;
+  }
+  100% {
+    top: 50%;
+    right: 0;
+  }
+}
+@keyframes loading3 {
+  0% {
+    bottom: 0;
+    right: 0;
+  }
+  35% {
+    bottom: 0;
+    right: 50%;
+  }
+  100% {
+    bottom: 0;
+    right: 50%;
+  }
+}
+@keyframes loading4 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  35% {
+    bottom: 50%;
+    left: 0;
+  }
+  100% {
+    bottom: 50%;
+    left: 0;
+  }
+}
+
+/*# sourceMappingURL=Loading.css.map */

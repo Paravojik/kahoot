@@ -2,7 +2,7 @@
 @import '../mixins.scss';
 .CreateQuiz{
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     padding: 20px 0;
     @include flex(flex-start,center,column);
     background-image: url("../img/background.avif");
