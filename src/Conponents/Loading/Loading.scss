@@ -21,21 +21,25 @@ $animationTime:5s;
         top: 0;
         left: 0;
         animation: $animationTime linear  loading1;
+        width: 100%;
     }
     .Loading__box2{
         top: 0;
         right: 0;
         animation: $animationTime linear loading2;
+        height: 100%;
     }
     .Loading__box3{
         bottom: 0;
         right: 0;
         animation: $animationTime linear loading3;
+        width: 100%;
     }
     .Loading__box4{
         bottom: 0;
         left: 0;
         animation: $animationTime linear loading4;
+        height: 100%;
     }
 }
 @keyframes loading1{
@@ -48,6 +52,7 @@ $animationTime:5s;
     35%{
         top: 0;
         left: 50%; 
+        width: 50%;
     }
     100%{
         top: 0;
@@ -62,6 +67,7 @@ $animationTime:5s;
     35%{
         top: 50%;
         right: 0;
+        height: 50%;
     }
     100%{
         top: 50%;
@@ -76,6 +82,7 @@ $animationTime:5s;
     35%{
         bottom: 0;
         right: 50%;
+        width: 50%;
     }
     100%{
         bottom: 0;
@@ -90,6 +97,7 @@ $animationTime:5s;
     35%{
         bottom: 50%;
         left: 0;
+        height: 50%;
     }
     100%{
         bottom: 50%;

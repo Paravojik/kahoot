@@ -22,7 +22,7 @@ function Loading(props){
     })
     let currentElement=0
     return(
-        <div className="Loading" style={{width:props.width || '100%',height:props.height || '100vh',top:props.top || 0,left:props.left || 0}}>
+        <div className="Loading"  style={{  position: props.position || 'fixed',width:props.width || '300px',height:props.height || '300px',top:props.top || "calc(50vh - 150px)",left:props.left || "calc(50% - 150px)", display: (props.visible===false? 'none':'flex')}}>
             {colorBox.map(item=>{
                 
                 let val;

@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react'
 import './CreateQuiz.css'
 import CreateQuizQuestion from './CreateQuizQuestion'
+import Loading from '../Loading/Loading'
 
 function CreateQuiz(){
     let [inpValName,setInpValName]=useState('')
 
     let [arrOfQuestions,setArrOfQuestions]=useState([{id:'Question: '+ 1,num:0,question:'',answer:[{id:'Answer: '+1,num:0,ans:'',isRight:false}]}])
-  
+    let [isVisibleLoader,setIsVisibleLoader]=useState(false)
    function createTest(){
-    alert('Wait for result')
+
+    setIsVisibleLoader(true)
     fetch('https://paravojik-kahoot-api.onrender.com/addQuest',{
         method:'POST',
         crossDomain:true,
@@ -27,10 +29,15 @@ function CreateQuiz(){
         if(data.error){
             alert('Test whith this name exist')
         }else{
-            alert('Your test created and now you can make new')
+            setIsVisibleLoader(false)
+      
             console.log(data,'addQuestion')
             setArrOfQuestions([{id:'Question: '+ 1,num:0,question:'',answer:[{id:'Answer: '+1,num:0,ans:'',isRight:false}]}])
             setInpValName('')
+            setTimeout(function(){
+                alert('Your test created and now you can make new')
+            },100)
+           
         }
        
     }).catch(error=>{
@@ -91,6 +98,7 @@ function CreateQuiz(){
     let curQuest=0
     return(
         <section className="CreateQuiz">
+            <Loading visible={isVisibleLoader}/>
             {/* <button onClick={getData}>get</button> */}
             <form className="CreateQuiz__main" onSubmit={sendData}>
                 <div className="CreateQuiz__main__topic">Create your Test</div>
