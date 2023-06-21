@@ -12,7 +12,7 @@ function Loading(props){
         const interval= setInterval(function(){
             let currentNum=currentStart++
           
-            console.log(currentNum)
+            // console.log(currentNum)
             if(currentNum>4){
                 currentNum=1
             }

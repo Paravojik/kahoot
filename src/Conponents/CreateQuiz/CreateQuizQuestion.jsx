@@ -11,7 +11,7 @@ function CreateQuizQuestion(props){
     }
 
     useEffect(function(){
-        console.log(delit)
+ 
         setInpValue(props.value.question)
 
         setArrOfAnswers([...props.value.answer])

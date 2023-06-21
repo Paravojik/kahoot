@@ -44,19 +44,19 @@ function CreateQuiz(){
         alert(error)
     })
     }
-    function getData(){
-        fetch('https://paravojik-kahoot-api.onrender.com/getQuestions')
-        .then((res)=>res.json())
-        .then((data)=>{
-            console.log(data,'getData')
-        })
-    }
+    // function getData(){
+    //     fetch('https://paravojik-kahoot-api.onrender.com/getQuestions')
+    //     .then((res)=>res.json())
+    //     .then((data)=>{
+    //         console.log(data,'getData')
+    //     })
+    // }
     function sendData(e) {
         
         e.preventDefault();
 
         createTest()
-        getData()
+        // getData()
     }
     function addQuestion(val){
         // let copy=arrOfQuestions

@@ -19,16 +19,6 @@
   font-size: 32px;
   cursor: pointer;
 }
-.CreateQuiz .CreateQuiz__inp {
-  width: 60%;
-  height: 30px;
-  border-radius: 5px;
-  font-size: 26px;
-  border: 1px solid black;
-  padding: 0 5px;
-  background-color: transparent;
-  margin: 10px 0;
-}
 .CreateQuiz .CreateQuiz__main {
   width: 60%;
   min-height: 10vh;

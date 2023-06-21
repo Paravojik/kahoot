@@ -4,6 +4,7 @@ import './App.css';
 import CreateQuiz from './Conponents/CreateQuiz/CreateQuiz';
 import Home from './Conponents/Home/Home';
 import Header from './Conponents/Header/Header';
+import Tests from './Conponents/Tests/Tests';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/tests/*' element={<Tests/>}/>
         <Route path='/createQuiz' element={<CreateQuiz/>}/>
         <Route path='*' element={<h1>Page not found</h1>}/>
       </Routes>
