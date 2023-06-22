@@ -2,11 +2,12 @@
 @import '../mixins.scss';
 .CreateQuiz{
     width: 100%;
-    min-height: 90vh;
+    min-height: 100vh;
     padding: 20px 0;
     @include flex(flex-start,center,column);
     background-image: url("../img/background.avif");
     background-size: cover;
+    padding-top: 100px;
     .CreateQuiz__send{
         padding: 10px 15px;
         background-color: rgb(66, 172, 66);

@@ -1,12 +1,13 @@
 .Home{
     width: 100%;
-    height: calc(100vh - 80px);
+    height: 100vh;
     background-image: url('../img/background.avif');
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 80px;
     .Home__name{
         font-size: 50px;
         font-family: 'Kablammo', cursive;

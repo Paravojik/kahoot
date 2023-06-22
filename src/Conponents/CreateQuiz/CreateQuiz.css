@@ -1,6 +1,6 @@
 .CreateQuiz {
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   padding: 20px 0;
   display: flex;
   justify-content: flex-start;
@@ -8,6 +8,7 @@
   flex-direction: column;
   background-image: url("../img/background.avif");
   background-size: cover;
+  padding-top: 100px;
 }
 .CreateQuiz .CreateQuiz__send {
   padding: 10px 15px;

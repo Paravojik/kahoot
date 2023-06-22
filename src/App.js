@@ -14,7 +14,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/tests/*' element={<Tests/>}/>
         <Route path='/createQuiz' element={<CreateQuiz/>}/>
-        <Route path='*' element={<h1>Page not found</h1>}/>
+        <Route path='*' element={<h1 style={{paddingTop:'100px'}}>Page not found</h1>}/>
       </Routes>
       {/* <Home/>
       <CreateQuiz/> */}

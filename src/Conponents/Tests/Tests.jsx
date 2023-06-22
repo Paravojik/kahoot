@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import './Tests.css'
 import Test from './Test'
-import { Link } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
 import Loading from '../Loading/Loading'
+import TestPage from '../TestPage/TestPage'
 function Tests(){
     let [tests,setTests]=useState([])
     let [filteredTests,setFilteredTests]=useState([])
@@ -44,12 +45,23 @@ function Tests(){
                 {filteredTests.length===0 ? (isVisibleLoading===false ? <h1>There is no test with this name</h1>:null) :filteredTests.map(item=>{
                     
                     return(
-                        <Link key={'Test:'+item._id } to={item._id }>
+                        <Link key={'Test:'+item._id} to={item._id+'/page=1'  }>
                         <Test   value={item}/>
                         </Link>
                         
                     )
                 })}
+                <Routes>
+
+               
+                {filteredTests.map(item=>{
+                    
+                    return(
+                        <Route key={'TestPage:'+item._id} path={item._id +'/*'} element={<TestPage value={item}/>}/>
+                        
+                    )
+                })}
+                 </Routes>
                 
             </div>
         </div>
