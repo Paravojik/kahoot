@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import TestPageSummary from './TestPageSummary'
 function TestPage(props){
     // console.log(props.value)
-    let [arrOfAnswers,setArrOfAnswers]=useState({})
+    let [arrOfAnswers,setArrOfAnswers]=useState(JSON.parse(localStorage.getItem('arrOfAnswers__LS')) || {})
     let curPage=0
     let [amountOfQuestions,setAmountOfQuestions]=useState('')
     useEffect(function(){
@@ -17,11 +17,11 @@ function TestPage(props){
         let copy={...arrOfAnswers}
         copy[num]=value
         setArrOfAnswers(copy)
+        localStorage.setItem('arrOfAnswers__LS',JSON.stringify(copy))
+        console.log(JSON.parse(localStorage.getItem('arrOfAnswers__LS')),copy)
       
     }
-    useEffect(function(){
-        console.log('arrOfAnswers',arrOfAnswers)
-    },[arrOfAnswers])
+
     return(
         <div className="TestPage">
       
@@ -33,7 +33,7 @@ function TestPage(props){
                     )
                   
                 })}
-                 <Route  path={'summary'} element={<TestPageSummary arrOfAnswers={arrOfAnswers}/>}/>
+                 <Route  path={'summary'} element={<TestPageSummary value={props.value} arrOfAnswers={arrOfAnswers}/>}/>
             </Routes>
         </div>
     )

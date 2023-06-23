@@ -9,6 +9,98 @@
   padding: 20px 10px;
   padding-top: 100px;
 }
+.TestPage .TestPageSummary {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.TestPage .TestPageSummary .TestPageSummary__container {
+  width: 100%;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.TestPage .TestPageSummary .TestPageSummary__container .TestPageSummary__container__block {
+  width: clamp(300px, 100%, 900px);
+  min-height: 300px;
+  background-color: rgba(200, 200, 200, 0.2);
+  margin: 20px 0;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.TestPage .TestPageSummary .TestPageSummary__container .TestPageSummary__container__block .TestPageSummary__container__block__question {
+  font-size: 36px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.TestPage .TestPageSummary .TestPageSummary__container .TestPageSummary__container__block .TestPageSummary__container__block__ans {
+  width: 100%;
+  min-height: 10px;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.TestPage .TestPageSummary h1 {
+  text-align: center;
+}
+.TestPage .TestPageSummary .TestPageSummary__points {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.TestPage .TestPageSummary .TestPageSummary__points .TestPageSummary__points__bar {
+  width: 250px;
+  height: 45px;
+  background-color: rgba(20, 20, 20, 0.1);
+  border-radius: 10px;
+  margin: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.TestPage .TestPageSummary .TestPageSummary__points .TestPageSummary__points__bar .TestPageSummary__points__bar__container {
+  position: absolute;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  padding: 10px;
+}
+.TestPage .TestPageSummary .TestPageSummary__points .TestPageSummary__points__bar .TestPageSummary__points__bar__green {
+  background-color: rgb(134, 212, 17);
+  height: 100%;
+  width: 0%;
+  transition: 1s;
+  border-radius: 10px;
+}
+.TestPage .TestPageSummary .TestPageSummary__points .TestPageSummary__points__bar .TestPageSummary__points__bar__good {
+  color: rgb(75, 125, 0);
+}
+.TestPage .TestPageSummary .TestPageSummary__points .TestPageSummary__points__bar .TestPageSummary__points__bar__bad {
+  color: rgb(120, 4, 0);
+}
+.TestPage .TestPageSummary .TestPageSummary__points .TestPageSummary__points__text {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border-bottom: 5px solid rgba(20, 20, 20, 0.2);
+  background-color: white;
+  margin: 10px 20px;
+}
 .TestPage .TestPageQuestion {
   width: 100%;
   min-height: 80vh;
@@ -27,6 +119,7 @@
 }
 .TestPage .TestPageQuestion .TestPageQuestion__id {
   font-size: 36px;
+  margin-bottom: 20px;
 }
 .TestPage .TestPageQuestion .TestPageQuestion__answers {
   width: 100%;

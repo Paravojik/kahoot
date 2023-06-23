@@ -45,7 +45,7 @@ function Tests(){
                 {filteredTests.length===0 ? (isVisibleLoading===false ? <h1>There is no test with this name</h1>:null) :filteredTests.map(item=>{
                     
                     return(
-                        <Link key={'Test:'+item._id} to={item._id+'/page=1'  }>
+                        <Link onClick={()=>localStorage.setItem('arrOfAnswers__LS',JSON.stringify({}))} key={'Test:'+item._id} to={item._id+'/page=1'  }>
                         <Test   value={item}/>
                         </Link>
                         

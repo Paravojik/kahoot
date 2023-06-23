@@ -30,4 +30,10 @@
   background-color: rgb(33, 111, 255);
 }
 
+@media screen and (max-width: 400px) {
+  .Header {
+    padding: 0 5px;
+  }
+}
+
 /*# sourceMappingURL=Header.css.map */

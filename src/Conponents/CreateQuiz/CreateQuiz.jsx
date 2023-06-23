@@ -93,7 +93,7 @@ function CreateQuiz(){
 
     }
     useEffect(function(){
-        console.log('arr:',arrOfQuestions)
+        // console.log('arr:',arrOfQuestions)
     },[arrOfQuestions])
     let curQuest=0
     return(
