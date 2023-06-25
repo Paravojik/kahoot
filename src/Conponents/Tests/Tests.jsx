@@ -37,7 +37,7 @@ function Tests(){
 
     },[])
     return(
-        <div className="Tests">
+        <section className="Tests">
             <h1 className='Tests__text'>Tests</h1>
             <input className='Tests__inpSearch' type="text" placeholder='Find Test' value={filterInp} onChange={(e)=>inpChane(e)} />
             <div className="Tests__main">
@@ -64,7 +64,7 @@ function Tests(){
                  </Routes>
                 
             </div>
-        </div>
+        </section>
     )
 }
 export default Tests

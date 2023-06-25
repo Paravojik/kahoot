@@ -5,7 +5,7 @@ import BtnTests from '../UI/BtnTests/BtnTests'
 import BtnCreate from '../UI/BtnCreate/BtnCreate'
 function Header(){
     return(
-        <div className="Header">
+        <header className="Header">
             <Link to='/'><Logo/></Link>
         
             <div className="Header__btns">
@@ -13,7 +13,7 @@ function Header(){
                 <BtnCreate/>
              
             </div>
-        </div>
+        </header>
     )
 }
 export default Header
