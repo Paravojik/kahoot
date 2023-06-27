@@ -17,17 +17,32 @@
   justify-content: space-between;
   align-items: center;
 }
-.Header .Header__btns .Header__btns__btn {
-  margin: 0 20px;
-  font-size: 20px;
-  background-color: rgb(133, 198, 36);
-  padding: 10px 15px;
-  border-radius: 10px;
-  color: white;
+.Header .Header__btns .Header__btns__user {
   cursor: pointer;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 5px;
+  margin-left: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  user-select: none;
 }
-.Header .Header__btns .Header__btns__btnCreate {
-  background-color: rgb(33, 111, 255);
+.Header .Header__btns .Header__btns__user .Header__btns__user__menu {
+  position: absolute;
+  min-height: 30px;
+  background-color: white;
+  width: 100px;
+  margin-top: 28px;
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  margin-right: -5px;
 }
 
 @media screen and (max-width: 400px) {

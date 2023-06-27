@@ -2,12 +2,17 @@ import { useEffect, useState } from 'react'
 import './CreateQuiz.css'
 import CreateQuizQuestion from './CreateQuizQuestion'
 import Loading from '../Loading/Loading'
+import { useNavigate } from 'react-router-dom'
+// import SignUpPage from '../SignUpPage/SignUpPage'
+// import LogInPage from '../LogInPage/LogInPage'
 
 function CreateQuiz(){
     let [inpValName,setInpValName]=useState('')
 
     let [arrOfQuestions,setArrOfQuestions]=useState([{id:'Question: '+ 1,num:0,question:'',answer:[{id:'Answer: '+1,num:0,ans:'',isRight:false}]}])
     let [isVisibleLoader,setIsVisibleLoader]=useState(false)
+    // let [isVisibleSignUp,setIsVisibleSignUp]=useState(false)
+    // let [isVisibleLogIn,setIsVisibleLogIn]=useState(false)
    function createTest(){
 
     setIsVisibleLoader(true)
@@ -77,28 +82,56 @@ function CreateQuiz(){
         copy[num].answer=value
         setArrOfQuestions([...copy])
     }
-   async function  deleteQuestion (number){
-         let copy= arrOfQuestions.filter(item=>item.num!==number)
-       for(let i=0;i<copy.length;i++){
-        copy[i].id= 'Question: '+(i+1)
-        copy[i].num= i
-        copy[i].question= copy[i].question+'1'
-       }
-     await  setArrOfQuestions([...copy])
-       for(let i=0;i<copy.length;i++){
-
-        copy[i].question=  copy[i].question.substring(0,copy[i].question.length-1)
-       }
-    await   setArrOfQuestions([...copy])
+    function  deleteQuestion (number){
+    if(arrOfQuestions.length>1){
+        let copy= arrOfQuestions.filter(item=>item.num!==number)
+        for(let i=0;i<copy.length;i++){
+         copy[i].id= 'Question: '+(i+1)
+         copy[i].num= i
+         copy[i].question= copy[i].question+'1'
+        }
+        setArrOfQuestions([...copy])
+        for(let i=0;i<copy.length;i++){
+ 
+         copy[i].question=  copy[i].question.substring(0,copy[i].question.length-1)
+        }
+        setArrOfQuestions([...copy])
+    }
+    
 
     }
+    // function openLogIn(){
+    //     setIsVisibleSignUp(false)
+    //     setIsVisibleLogIn(true)
+    // }
+    // function openSignUp(){
+    //     setIsVisibleSignUp(true)
+    //     setIsVisibleLogIn(false)
+    // }
+    // function closeSIgning(){
+    //     setIsVisibleSignUp(false)
+    //     setIsVisibleLogIn(false)
+    // }
+    const navigate = useNavigate();
+    useEffect(function(){
+        if(localStorage.getItem('UserInfo__LS')){
+            
+        }else{
+            // setIsVisibleSignUp(true)
+            navigate("/signUp"); 
+        }
+        // eslint-disable-next-line
+    },[])
     useEffect(function(){
         // console.log('arr:',arrOfQuestions)
     },[arrOfQuestions])
     let curQuest=0
     return(
         <section className="CreateQuiz">
+                  {/* <SignUpPage closeSIgning={closeSIgning} openLogIn={openLogIn} visible={isVisibleSignUp}/>
+            <LogInPage closeSIgning={closeSIgning} openSignUp={openSignUp} visible={isVisibleLogIn}/> */}
             <Loading visible={isVisibleLoader}/>
+
             {/* <button onClick={getData}>get</button> */}
             <form className="CreateQuiz__main" onSubmit={sendData}>
                 <div className="CreateQuiz__main__topic">Create your Test</div>

@@ -5,6 +5,8 @@ import CreateQuiz from './Conponents/CreateQuiz/CreateQuiz';
 import Home from './Conponents/Home/Home';
 import Header from './Conponents/Header/Header';
 import Tests from './Conponents/Tests/Tests';
+import SignUpPage from './Conponents/SignUpPage/SignUpPage';
+import LogInPage from './Conponents/LogInPage/LogInPage';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/tests/*' element={<Tests/>}/>
         <Route path='/createQuiz' element={<CreateQuiz/>}/>
+        <Route path='/signUp' element={<SignUpPage visible={true}/>}/>
+        <Route path='/logIn' element={<LogInPage visible={true}/>}/>
         <Route path='*' element={<h1 style={{paddingTop:'100px'}}>Page not found</h1>}/>
       </Routes>
       {/* <Home/>

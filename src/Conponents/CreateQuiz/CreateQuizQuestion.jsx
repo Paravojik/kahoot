@@ -40,12 +40,15 @@ function CreateQuizQuestion(props){
    
     }
     function deleteAnswer(number){
-        let copy= arrOfAnswers.filter(item=>item.num!==number)
-        for(let i=0;i<copy.length;i++){
-         copy[i].id= 'Question: '+(i+1)
-         copy[i].num= i
+        if(arrOfAnswers.length>1){
+            let copy= arrOfAnswers.filter(item=>item.num!==number)
+            for(let i=0;i<copy.length;i++){
+             copy[i].id= 'Question: '+(i+1)
+             copy[i].num= i
+            }
+            setArrOfAnswers([...copy])
         }
-        setArrOfAnswers([...copy])
+      
     }
     function isRightAns(num){
         let copy=[...arrOfAnswers]
