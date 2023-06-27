@@ -2,11 +2,14 @@ import { useState } from 'react'
 import './LogInPage.css'
 import Loading from '../Loading/Loading'
 import { Link, useNavigate } from 'react-router-dom'
+import openEye from '../img/viewEye.png'
+import hiddenEye from '../img/hiddenEye.png'
 export default function LogInPage(props){
     let [nicknameInp,setNicknameInp]=useState('')
 
     let [passwordInp,setPasswordInp]=useState('')
     let [isVisibleLoader,setIsVisibleLoader]=useState(false)
+    let [isVisiblePassword,setIsVisiblePassword]=useState(false)
     const navigate=useNavigate()
     function LogIn(e){
         e.preventDefault();
@@ -56,14 +59,18 @@ export default function LogInPage(props){
             alert(error)
         })
         }
+       
     return(
         <form onSubmit={LogIn} className="LogInPage" style={props.visible===true? {display:'flex'}:{display:'none'}}>
             <Loading visible={isVisibleLoader}/>
             <h1>Log In</h1>
             <div className="LogInPage__main">
-            <input required minLength={4}  value={nicknameInp} onChange={(e)=>setNicknameInp(e.target.value)} placeholder='Nickname'  type="text" />
+            <input name='nickname' required minLength={4}  value={nicknameInp} onChange={(e)=>setNicknameInp(e.target.value)} placeholder='Nickname'  type="text" />
+          <div className="LogInPage__main__pass">
+          <input name='password' required minLength={8} value={passwordInp} onChange={(e)=>setPasswordInp(e.target.value)} placeholder='Password'  type={isVisiblePassword===false?"password" :'text'} />
+          <img alt='View' className='LogInPage__main__pass__img' onClick={()=>setIsVisiblePassword(!isVisiblePassword)} src={isVisiblePassword===false? hiddenEye : openEye}/>
+          </div>
           
-            <input required minLength={8} value={passwordInp} onChange={(e)=>setPasswordInp(e.target.value)} placeholder='Password'  type="password" />
     
             </div>
          
