@@ -44,6 +44,9 @@
   color: black;
   margin-right: -5px;
 }
+.Header .Header__btns .Header__btns__user .Header__btns__user__menu a {
+  color: black;
+}
 
 @media screen and (max-width: 400px) {
   .Header {

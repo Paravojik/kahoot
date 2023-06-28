@@ -3,16 +3,14 @@ import './CreateQuiz.css'
 import CreateQuizQuestion from './CreateQuizQuestion'
 import Loading from '../Loading/Loading'
 import { useNavigate } from 'react-router-dom'
-// import SignUpPage from '../SignUpPage/SignUpPage'
-// import LogInPage from '../LogInPage/LogInPage'
+
 
 function CreateQuiz(){
     let [inpValName,setInpValName]=useState('')
 
     let [arrOfQuestions,setArrOfQuestions]=useState([{id:'Question: '+ 1,num:0,question:'',answer:[{id:'Answer: '+1,num:0,ans:'',isRight:false}]}])
     let [isVisibleLoader,setIsVisibleLoader]=useState(false)
-    // let [isVisibleSignUp,setIsVisibleSignUp]=useState(false)
-    // let [isVisibleLogIn,setIsVisibleLogIn]=useState(false)
+
    function createTest(){
 
     setIsVisibleLoader(true)
@@ -27,6 +25,7 @@ function CreateQuiz(){
         body:JSON.stringify({
             name:inpValName,
             quest:arrOfQuestions,
+            creator:JSON.parse(localStorage.getItem('UserInfo__LS')).Unickname, 
         })
 
     }).then((res)=>res.json())
@@ -49,13 +48,7 @@ function CreateQuiz(){
         alert(error)
     })
     }
-    // function getData(){
-    //     fetch('https://paravojik-kahoot-api.onrender.com/getQuestions')
-    //     .then((res)=>res.json())
-    //     .then((data)=>{
-    //         console.log(data,'getData')
-    //     })
-    // }
+
     function sendData(e) {
         
         e.preventDefault();
@@ -100,18 +93,7 @@ function CreateQuiz(){
     
 
     }
-    // function openLogIn(){
-    //     setIsVisibleSignUp(false)
-    //     setIsVisibleLogIn(true)
-    // }
-    // function openSignUp(){
-    //     setIsVisibleSignUp(true)
-    //     setIsVisibleLogIn(false)
-    // }
-    // function closeSIgning(){
-    //     setIsVisibleSignUp(false)
-    //     setIsVisibleLogIn(false)
-    // }
+
     const navigate = useNavigate();
     useEffect(function(){
         if(localStorage.getItem('UserInfo__LS')){
@@ -128,11 +110,10 @@ function CreateQuiz(){
     let curQuest=0
     return(
         <section className="CreateQuiz">
-                  {/* <SignUpPage closeSIgning={closeSIgning} openLogIn={openLogIn} visible={isVisibleSignUp}/>
-            <LogInPage closeSIgning={closeSIgning} openSignUp={openSignUp} visible={isVisibleLogIn}/> */}
+
             <Loading visible={isVisibleLoader}/>
 
-            {/* <button onClick={getData}>get</button> */}
+
             <form className="CreateQuiz__main" onSubmit={sendData}>
                 <div className="CreateQuiz__main__topic">Create your Test</div>
             <div className="CreateQuiz__testName">

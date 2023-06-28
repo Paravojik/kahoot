@@ -28,6 +28,7 @@ export default function SignUpPage(props){
                 Unickname:nicknameInp,
                 Uemail:emailInp,
                 Upassword:passwordInp,
+         
      
             })
     
@@ -36,7 +37,8 @@ export default function SignUpPage(props){
             setIsVisibleLoader(false)
                 console.log(data,'createUser')
                 let info={Unickname:nicknameInp,
-                    Uemail:emailInp,}
+                    Uemail:emailInp,
+                likes:{}}
                localStorage.setItem('UserInfo__LS',JSON.stringify(info))
             
                navigate("/tests"); 
@@ -52,9 +54,9 @@ export default function SignUpPage(props){
             <Loading visible={isVisibleLoader}/>
             <h1>Sign Up</h1>
             <div className="SignUpPage__main">
-            <input name='nickname' required minLength={4} maxLength={20} value={nicknameInp} onChange={(e)=>setNicknameInp(e.target.value)} placeholder='Nickname'  type="text" />
+         
             <input name='email' required  value={emailInp} onChange={(e)=>setEmailInp(e.target.value)} placeholder='Email'  type='email' />
-           
+            <input name='nickname' required minLength={4} maxLength={20} value={nicknameInp} onChange={(e)=>setNicknameInp(e.target.value)} placeholder='Nickname'  type="text" />  
             <div className="SignUpPage__main__pass">
           <input name='password' required minLength={8} value={passwordInp} onChange={(e)=>setPasswordInp(e.target.value)} placeholder='Password'  type={isVisiblePassword===false?"password" :'text'} />
           <img alt='View' className='SignUpPage__main__pass__img' onClick={()=>setIsVisiblePassword(!isVisiblePassword)} src={isVisiblePassword===false? hiddenEye : openEye}/>

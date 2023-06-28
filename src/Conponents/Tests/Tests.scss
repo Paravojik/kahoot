@@ -19,11 +19,34 @@
     }
     .Tests__main__test{
         min-width: 200px;
+        max-width: 250px;
         margin: 20px;
         padding: 10px 15px;
         border-radius: 10px;
         background-color: white;
-        cursor: pointer;
-        color: black;
+   
+
+        h1{
+            cursor: pointer;
+            color: black;
+            transition: 0.35s;
+        
+        }
+        h1:hover{
+            color: rgb(96, 118, 242);
+        }
+        .Tests__main__test__numberOfQuest{
+            margin: 3px 0;
+        }
+        .Tests__main__test__likes{
+            display: flex;
+            align-items: center;
+            img{
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+        }
     }
 }

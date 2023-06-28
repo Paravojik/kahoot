@@ -36,7 +36,8 @@ export default function LogInPage(props){
             setIsVisibleLoader(false)
                 if(data.status==='ok'){
                     let info={Unickname:nicknameInp,
-                        Uemail:data.data.email,}
+                        Uemail:data.data.email,
+                    likes:data.data.likes}
                    localStorage.setItem('UserInfo__LS',JSON.stringify(info))
                   
                    navigate("/tests"); 
