@@ -35,36 +35,48 @@ function Tests(){
         // console.log(copy)
         setFilteredTests([...copy])
     }
+    let [isCanBeLike,setIsCanBeLike]=useState(true)
     function clickLike(id){
-        let copy={...userInfo}
+
+        if(isCanBeLike===true){
+            setIsCanBeLike(false)
+            // isCanBeLike=false
+            let copy={...userInfo}
     
-        copy.likes[id]=!copy.likes[id] 
-   
-            fetch('https://paravojik-kahoot-api.onrender.com/addLike',{
-            method:'POST',
-            crossDomain:true,
-            headers:{
-                'Content-Type':'application/json',
-                Accept:'application/json',
-                'Access-Control-Allow-Origin':'*',
-            },
-            body:JSON.stringify({
-                like:copy.likes[id] ,
-                id:id,
-                nickname:JSON.parse(localStorage.getItem('UserInfo__LS')).Unickname, 
+            copy.likes[id]=!copy.likes[id] 
+       
+                fetch('https://paravojik-kahoot-api.onrender.com/addLike',{
+                method:'POST',
+                crossDomain:true,
+                headers:{
+                    'Content-Type':'application/json',
+                    Accept:'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                },
+                body:JSON.stringify({
+                    like:copy.likes[id] ,
+                    id:id,
+                    nickname:JSON.parse(localStorage.getItem('UserInfo__LS')).Unickname, 
+                })
+        
+            }).then((res)=>res.json())
+            .then((data)=>{
+                console.log(data)
+               
+            }).catch(error=>{
+                alert(error)
             })
     
-        }).then((res)=>res.json())
-        .then((data)=>{
-            console.log(data)
-           
-        }).catch(error=>{
-            alert(error)
-        })
-
-
-        setUserInfo({...copy})
-        localStorage.setItem('UserInfo__LS',JSON.stringify(copy))
+    
+            setUserInfo({...copy})
+            localStorage.setItem('UserInfo__LS',JSON.stringify(copy))
+            
+            setTimeout(function(){
+                
+                setIsCanBeLike(true)
+            },500)
+        }
+        
         
     }
     useEffect(function(){

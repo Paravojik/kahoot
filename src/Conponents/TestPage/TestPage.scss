@@ -117,8 +117,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    // background-color: red;
+   
     // overflow: scroll;
+    .TestPageQuestion__top{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   
+    }
     .TestPageQuestion__question{
         font-size: 36px;
         background-color: white;

@@ -4,10 +4,13 @@ function TestPageQuestion(props){
     // console.log(props.amountOfQuestions,props.amountOfQuestion)
     return(
         <div className="TestPageQuestion">
-            <div className="TestPageQuestion__id">{props.value.id}</div>
-            <div className="TestPageQuestion__question">
-            {props.value.question}
+            <div className="TestPageQuestion__top">
+                <div className="TestPageQuestion__id">{props.value.id}</div>
+                <div className="TestPageQuestion__question">
+                {props.value.question}
+                </div>
             </div>
+         
           <div className="TestPageQuestion__answers">
             {props.value.answer.map(item=>{
                 return(

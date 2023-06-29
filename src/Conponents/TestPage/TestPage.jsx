@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import TestPageSummary from './TestPageSummary'
 function TestPage(props){
     // console.log(props.value)
-    let [arrOfAnswers,setArrOfAnswers]=useState(JSON.parse(localStorage.getItem('arrOfAnswers__LS')) || {})
+    let [arrOfAnswers,setArrOfAnswers]=useState(JSON.parse(localStorage.getItem('arrOfAnswers__LS'+props.value._id)) || {})
     let curPage=0
     let [amountOfQuestions,setAmountOfQuestions]=useState('')
     useEffect(function(){
@@ -17,8 +17,8 @@ function TestPage(props){
         let copy={...arrOfAnswers}
         copy[num]=value
         setArrOfAnswers(copy)
-        localStorage.setItem('arrOfAnswers__LS',JSON.stringify(copy))
-        console.log(JSON.parse(localStorage.getItem('arrOfAnswers__LS')),copy)
+        localStorage.setItem('arrOfAnswers__LS'+props.value._id,JSON.stringify(copy))
+        console.log(JSON.parse(localStorage.getItem('arrOfAnswers__LS'+props.value._id)),copy)
       
     }
 
