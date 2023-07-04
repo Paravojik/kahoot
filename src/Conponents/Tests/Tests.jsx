@@ -62,6 +62,7 @@ function Tests(){
             }).then((res)=>res.json())
             .then((data)=>{
                 console.log(data)
+                localStorage.setItem('UserInfo__LS',JSON.stringify(copy))
                
             }).catch(error=>{
                 alert(error)
@@ -69,7 +70,7 @@ function Tests(){
     
     
             setUserInfo({...copy})
-            localStorage.setItem('UserInfo__LS',JSON.stringify(copy))
+
             
             setTimeout(function(){
                 
