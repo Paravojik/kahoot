@@ -1,14 +1,15 @@
 import './Logo.css'
+import logo from './Logo.png'
 function Logo(){
-    let colorBox=[
-        'red',
-        'blue',
-        'rgb(255, 183, 0)',
-        'green'
-    ]
+    // let colorBox=[
+    //     'red',
+    //     'blue',
+    //     'rgb(255, 183, 0)',
+    //     'green'
+    // ]
     return(
         <div className="Logo">
-            <div className="Logo__text">
+            {/* <div className="Logo__text">
                 K
             </div>
             
@@ -17,7 +18,9 @@ function Logo(){
 <div key={'Logo__box'+item} className="Logo__box" style={{backgroundColor:item}}></div>
                 )
                 
-            })}
+            })} */}
+
+            <img className='Logo__img' src={logo} alt="K" />
          
         </div>
     )
